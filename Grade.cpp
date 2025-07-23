@@ -25,7 +25,7 @@ int main() {
     cin >> x;
     if (x >= 101) {
         print("Invalid input");
-        print("Please enter more than 100");
+        print("Please enter lower than 100");
     }
     else if (x > 49) {
         if (x >= 50 and x <= 54) {
