@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 using namespace std;
 
 void print(const string& data) {
@@ -26,6 +27,8 @@ int main() {
     if (x >= 101) {
         print("Invalid input");
         print("Please enter lower than 100");
+        print("\nPlease Try Again\n");
+        main();
     }
     else if (x > 49) {
         if (x >= 50 and x <= 54) {
@@ -54,6 +57,8 @@ int main() {
         if (x <= -1){
             print("Invalid input");
             print("Please enter more than 0");
+            print("\nPlease Try Again\n");
+            main();
         }
         else {
             print("Grade : 0");
