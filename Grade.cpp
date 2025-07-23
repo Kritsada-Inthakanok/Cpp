@@ -24,7 +24,7 @@ int main() {
         print("Invalid input");
         print("Please enter more than 0");
     }
-    else if (x >= 49) {
+    else if (x > 49) {
         if (x >= 50 and x <= 54) {
             print("Grade : 1");
         }
