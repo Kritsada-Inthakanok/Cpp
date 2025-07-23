@@ -13,6 +13,9 @@ void print(const string& data) {
 70-74 = 3
 75-79 = 3.5
 80-100 = 4
+
+Lower than 0 : Error
+Higher than 100 : Error
 */
 
 int main() {
