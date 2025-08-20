@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    // Create float value : weight, height, bmi
+    float weight, height, bmi;
+
+    cout << "ＢＭＩ Ｃａｌｃｕｌａｔｏｒ (ᴋɢ. ᴀɴᴅ ᴄᴍ.)\n";
+
+    // Asking for weight
+    while (true) {
+        cout << "Enter your weight (kg): ";
+        cin >> weight;
+
+        if (cin.fail() || weight <= 0) {
+            // Check if input failed (non-numeric) OR weight is less than or equal to 0
+            cin.clear(); // Clear the error to use it again
+            cin.ignore(1000, '\n'); // Discard up to 1000 characters from the input buffer until newline
+            cout << "Invalid input. Please try again.\n";
+        } else {
+            // If input is valid exit the loop
+            break;
+        }
+    }
+
+    // Asking for height
+    while (true) {
+        cout << "Enter your height (cm): ";
+        cin >> height;
+
+        if (cin.fail() || height <= 0) {
+            // Check if input failed (non-numeric) OR weight is less than or equal to 0
+            cin.clear(); // Clear the error to use it again
+            cin.ignore(1000, '\n'); // Discard up to 1000 characters from the input buffer until newline
+            cout << "Invalid input. Please try again.\n";
+        } else {
+            // If input is valid exit the loop
+            break;
+        }
+    }
+
+    // Calculate BMI
+    bmi = weight / pow((height / 100), 2);
+    cout << "Your BMI is: " << bmi << endl;
+
+    // Determine BMI category
+    if (bmi < 18.5) {
+        cout << "BMI Category: Underweight" << endl;
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        cout << "BMI Category: Normal weight" << endl;
+    } else if (bmi >= 25 && bmi < 29.9) {
+        cout << "BMI Category: Overweight" << endl;
+    } else {
+        cout << "BMI Category: Obesity" << endl;
+    }
+
+    return 0;
+}
