@@ -1,0 +1,127 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+enum Formula {
+    Circle = 1,
+    Rectangle = 2,
+    Triangle = 3,
+    Square = 4,
+    Rhombus = 5,
+    Parallelogram = 6,
+    Kite = 7,
+    Ellipse = 8,
+    Trapezoid = 9,
+    Exit = 0
+};
+
+int main() {
+    int Select;
+    const double Pi = 3.14159;
+    
+    cout << "𝐀𝐫𝐞𝐚 𝐟𝐨𝐫𝐦𝐮𝐥𝐚";
+    
+    while (true) {
+        cout << "\nSelect formula:\n";
+        cout << "1. Circle\n";
+        cout << "2. Rectangle\n";
+        cout << "3. Triangle\n";
+        cout << "4. Square\n";
+        cout << "5. Rhombus\n";
+        cout << "6. Parallelogram\n";
+        cout << "7. Kite\n";
+        cout << "8. Ellipse\n";
+        cout << "9. Trapezoid\n";
+        cout << "0. Exit\n";
+        
+        cout << "Enter your choice: ";
+        cin >> Select;
+        
+        if (Select == Exit) {
+            cout << "Exiting program...\n";
+            break;
+        }
+        
+        switch (Select) {
+            case Circle: {
+                double Radius;
+                cout << "Enter Radius: ";
+                cin >> Radius;
+                if (Radius <= 0) { cout << "Invalid input.\n"; break; }
+                double area = Pi * pow(Radius, 2);
+                double circumference = 2 * Pi * Radius;
+                cout << "Area = " << area << "\n";
+                cout << "Circumference = " << circumference << "\n";
+                break;
+            }
+            case Rectangle: {
+                double Width, Length;
+                cout << "Enter Width and Length: ";
+                cin >> Width >> Length;
+                if (Width <= 0 || Length <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << Width * Length << "\n";
+                break;
+            }
+            case Triangle: {
+                double Base, Height;
+                cout << "Enter Base and Height: ";
+                cin >> Base >> Height;
+                if (Base <= 0 || Height <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << 0.5 * Base * Height << "\n";
+                break;
+            }
+            case Square: {
+                double Side;
+                cout << "Enter Side: ";
+                cin >> Side;
+                if (Side <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << Side * Side << "\n";
+                break;
+            }
+            case Rhombus: {
+                double d1, d2;
+                cout << "Enter two diagonals: ";
+                cin >> d1 >> d2;
+                if (d1 <= 0 || d2 <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << 0.5 * d1 * d2 << "\n";
+                break;
+            }
+            case Parallelogram: {
+                double Base, Height;
+                cout << "Enter Base and Height: ";
+                cin >> Base >> Height;
+                if (Base <= 0 || Height <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << Base * Height << "\n";
+                break;
+            }
+            case Kite: {
+                double d1, d2;
+                cout << "Enter two diagonals: ";
+                cin >> d1 >> d2;
+                if (d1 <= 0 || d2 <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << 0.5 * d1 * d2 << "\n";
+                break;
+            }
+            case Ellipse: {
+                double a, b;
+                cout << "Enter semi-major axis (a) and semi-minor axis (b): ";
+                cin >> a >> b;
+                if (a <= 0 || b <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << Pi * a * b << "\n";
+                break;
+            }
+            case Trapezoid: {
+                double a, b, h;
+                cout << "Enter two parallel sides and height: ";
+                cin >> a >> b >> h;
+                if (a <= 0 || b <= 0 || h <= 0) { cout << "Invalid input.\n"; break; }
+                cout << "Area = " << 0.5 * (a + b) * h << "\n";
+                break;
+            }
+            default:
+                cout << "Invalid choice. Try again.\n";
+        }
+    }
+    
+    return 0;
+}
